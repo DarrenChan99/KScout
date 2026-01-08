@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KScout</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
@@ -33,46 +33,100 @@
 
           <section class="panel" id="auto">
             <h2>Auto</h2>
-            <h3>Balls</h3>
-            <div class="ball_counter">
-              <input id="auto_balls" name="auto_balls" type="number" value="0" readonly />
-              <button type="button">+1</button>
-              <button type="button">+3</button>
-              <button type="button">↩</button>
-              <button type="button">↻</button>
+
+            <div class="control-group">
+              <div class="header-row">
+                <h3>Attempted</h3>
+                <input id="auto_balls_attempted" class="batch-display" name="auto_balls_attempted" type="number" value="0" readonly />
+              </div>
+              <div class="button-row circle-row">
+                <button type="button" class="counter-btn circle-btn" data-target="auto_balls_attempted" data-value="0">0</button>
+                <button type="button" class="counter-btn circle-btn" data-target="auto_balls_attempted" data-value="1">1</button>
+                <button type="button" class="counter-btn circle-btn" data-target="auto_balls_attempted" data-value="2">2</button>
+                <button type="button" class="counter-btn circle-btn" data-target="auto_balls_attempted" data-value="3">3</button>
+                <button type="button" class="counter-btn circle-btn" data-target="auto_balls_attempted" data-value="4">4</button>
+              </div>
             </div>
+
+            <div class="control-group">
+              <div class="header-row">
+                <h3>Made</h3>
+                <input id="auto_balls_made" class="batch-display" name="auto_balls_made" type="number" value="0" readonly />
+              </div>
+              <div class="button-row circle-row">
+                <button type="button" class="counter-btn circle-btn" data-target="auto_balls_made" data-value="0">0</button>
+                <button type="button" class="counter-btn circle-btn" data-target="auto_balls_made" data-value="1">1</button>
+                <button type="button" class="counter-btn circle-btn" data-target="auto_balls_made" data-value="2">2</button>
+                <button type="button" class="counter-btn circle-btn" data-target="auto_balls_made" data-value="3">3</button>
+                <button type="button" class="counter-btn circle-btn" data-target="auto_balls_made" data-value="4">4</button>
+              </div>
+            </div>
+
+            <div class="record-area">
+              <button type="button" class="sendball-btn" data-phase="auto">Record</button>
+            </div>
+
             <h3>Zone</h3>
-            <label>
-              <input id="auto_zone" name="auto_zone" type="radio" value="Near" />
-              Near
-            </label>
-            <label>
-              <input id="auto_zone" name="auto_zone" type="radio" value="Far" />
-              Far
-            </label>
+            <div class="row">
+              <label>
+                <input name="auto_zone" type="radio" value="Near" />
+                Near
+              </label>
+              <label>
+                <input name="auto_zone" type="radio" value="Far" />
+                Far
+              </label>
+            </div>
           </section>
         </div>
 
         <div id="right_column">
           <section class="panel" id="teleop">
             <h2>Teleop</h2>
-            <h3>Balls</h3>
-            <div class="ball_counter">
-              <input id="teleop_balls" name="teleop_balls" type="number" value="0" readonly />
-              <button type="button">+1</button>
-              <button type="button">+3</button>
-              <button type="button">↩</button>
-              <button type="button">↻</button>
+
+            <div class="control-group">
+              <div class="header-row">
+                <h3>Attempted</h3>
+                <input id="teleop_balls_attempted" class="batch-display" name="teleop_balls_attempted" type="number" value="0" readonly />
+              </div>
+              <div class="button-row circle-row">
+                <button type="button" class="counter-btn circle-btn" data-target="teleop_balls_attempted" data-value="0">0</button>
+                <button type="button" class="counter-btn circle-btn" data-target="teleop_balls_attempted" data-value="1">1</button>
+                <button type="button" class="counter-btn circle-btn" data-target="teleop_balls_attempted" data-value="2">2</button>
+                <button type="button" class="counter-btn circle-btn" data-target="teleop_balls_attempted" data-value="3">3</button>
+                <button type="button" class="counter-btn circle-btn" data-target="teleop_balls_attempted" data-value="4">4</button>
+              </div>
             </div>
+
+            <div class="control-group">
+              <div class="header-row">
+                <h3>Made</h3>
+                <input id="teleop_balls_made" class="batch-display" name="teleop_balls_made" type="number" value="0" readonly />
+              </div>
+              <div class="button-row circle-row">
+                <button type="button" class="counter-btn circle-btn" data-target="teleop_balls_made" data-value="0">0</button>
+                <button type="button" class="counter-btn circle-btn" data-target="teleop_balls_made" data-value="1">1</button>
+                <button type="button" class="counter-btn circle-btn" data-target="teleop_balls_made" data-value="2">2</button>
+                <button type="button" class="counter-btn circle-btn" data-target="teleop_balls_made" data-value="3">3</button>
+                <button type="button" class="counter-btn circle-btn" data-target="teleop_balls_made" data-value="4">4</button>
+              </div>
+            </div>
+
+            <div class="record-area">
+              <button type="button" class="sendball-btn" data-phase="teleop">Record</button>
+            </div>
+
             <h3>Zone</h3>
-            <label>
-              <input id="teleop_zone" name="teleop_zone" type="radio" value="Near" />
-              Near
-            </label>
-            <label>
-              <input id="teleop_zone" name="teleop_zone" type="radio" value="Far" />
-              Far
-            </label>
+            <div class="row">
+              <label>
+                <input name="teleop_zone" type="radio" value="Near" />
+                Near
+              </label>
+              <label>
+                <input name="teleop_zone" type="radio" value="Far" />
+                Far
+              </label>
+            </div>
           </section>
 
           <section class="panel" id="endgame">
@@ -94,10 +148,6 @@
           </section>
         </div>
       </div>
-      <div id="submit_area">
-        <button type="submit">Submit</button>
-      </div>
     </form>
-    <script src="script.js"></script>
   </body>
 </html>
