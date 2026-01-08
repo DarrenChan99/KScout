@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="FTC scouting page" />
+    <!-- TODO: design an image for the title + logo -->
+    <title>FTC Scouting</title>
+  </head>
+
+  <body>
+    <section id="header">
+      <header>
+        <h1>KScout</h1>
+      </header>
+    </section>
+
+    <section id="details">
+      <label for="team">Team Number</label>
+      <input id="team" type="text" required />
+      <label for="match">Match Number</label>
+      <input id="match" type="text" required />
+      <label for="tournament">Tournament</label>
+      <input id="tournament" type="text" />
+    </section>
+
+    <section id="auto">
+      <label for="auto_balls">Auto Balls</label>
+      <input id="auto_balls" value="0" type="number" />
+    </section>
+
+    <section id="teleop">
+      <label for="teleop_balls">Teleop Balls</label>
+      <input id="teleop_balls" value="0" type="number" />
+    </section>
+
+    <section id="endgame">
+    <label for="endgame">Endgame</label>
+    <input list="endgame_options" id="endgame" />
+    
+    <datalist id="endgame_options">
+      <option value="Partial">Partial</option>
+      <option value="Full">Full</option>
+      <option value="Lift">Lift</option>
+    </datalist>
+    </section>
+
+    <section id="submit">
+    <button>Submit</button>
+    </section>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
