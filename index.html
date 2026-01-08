@@ -4,53 +4,100 @@
     <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="FTC scouting page" />
-    <!-- TODO: design an image for the title + logo -->
-    <!-- TODO: MAKE READ.ME -->
-    <title>FTC Scouting</title>
+    <title>KScout</title>
   </head>
 
   <body>
-    <section id="header">
-      <header>
-        <h1>KScout</h1>
-      </header>
-    </section>
+    <header id="main-header">
+      <h1>KScout</h1>
+    </header>
 
-    <section id="details">
-      <label for="team">Team Number</label>
-      <input id="team" type="text" required />
-      <label for="match">Match Number</label>
-      <input id="match" type="text" required />
-      <label for="tournament">Tournament</label>
-      <input id="tournament" type="text" />
-    </section>
+    <form id="scout_form">
+      <div id="grid_container">
+        <div id="left_column">
+          <section class="panel" id="details">
+            <h2>Details</h2>
+            <div class="row">
+              <label for="team">Team Number</label>
+              <input id="team" type="number" name="team_number" required />
+            </div>
+            <div class="row">
+              <label for="match">Match Number</label>
+              <input id="match" type="number" name="match_number" required />
+            </div>
+            <div class="row">
+              <label for="tournament">Tournament</label>
+              <input id="tournament" type="text" name="tournament_name" />
+            </div>
+          </section>
 
-    <section id="auto">
-      <label for="auto_balls">Auto Balls</label>
-      <input id="auto_balls" value="0" type="number" />
-    </section>
+          <section class="panel" id="auto">
+            <h2>Auto</h2>
+            <h3>Balls</h3>
+            <div class="ball_counter">
+              <input id="auto_balls" name="auto_balls" type="number" value="0" readonly />
+              <button type="button">+1</button>
+              <button type="button">+3</button>
+              <button type="button">↩</button>
+              <button type="button">↻</button>
+            </div>
+            <h3>Zone</h3>
+            <label>
+              <input id="auto_zone" name="auto_zone" type="radio" value="Near" />
+              Near
+            </label>
+            <label>
+              <input id="auto_zone" name="auto_zone" type="radio" value="Far" />
+              Far
+            </label>
+          </section>
+        </div>
 
-    <section id="teleop">
-      <label for="teleop_balls">Teleop Balls</label>
-      <input id="teleop_balls" value="0" type="number" />
-    </section>
+        <div id="right_column">
+          <section class="panel" id="teleop">
+            <h2>Teleop</h2>
+            <h3>Balls</h3>
+            <div class="ball_counter">
+              <input id="teleop_balls" name="teleop_balls" type="number" value="0" readonly />
+              <button type="button">+1</button>
+              <button type="button">+3</button>
+              <button type="button">↩</button>
+              <button type="button">↻</button>
+            </div>
+            <h3>Zone</h3>
+            <label>
+              <input id="teleop_zone" name="teleop_zone" type="radio" value="Near" />
+              Near
+            </label>
+            <label>
+              <input id="teleop_zone" name="teleop_zone" type="radio" value="Far" />
+              Far
+            </label>
+          </section>
 
-    <section id="endgame">
-    <label for="endgame">Endgame</label>
-    <input list="endgame_options" id="endgame" />
-    
-    <datalist id="endgame_options">
-      <option value="Partial">Partial</option>
-      <option value="Full">Full</option>
-      <option value="Lift">Lift</option>
-    </datalist>
-    </section>
-
-    <section id="submit">
-    <button>Submit</button>
-    </section>
-    
+          <section class="panel" id="endgame">
+            <h2>Endgame</h2>
+            <div class="row">
+              <label>
+                <input type="radio" name="endgame" value="Partial" />
+                Partial
+              </label>
+              <label>
+                <input type="radio" name="endgame" value="Full" />
+                Full
+              </label>
+              <label>
+                <input type="radio" name="endgame" value="Lift" />
+                Lift
+              </label>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div id="submit_area">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
     <script src="script.js"></script>
   </body>
 </html>
