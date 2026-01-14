@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KScout</title>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+
+  <body class="bg-gray-900 text-white min-h-screen font-sans">
+
+    <header id="main-header" class="p-4 bg-gray-800 text-center">
+      <h1 class="text-3xl font-bold">KScout</h1>
+    </header>
+
+    <form id="scout_form" class="p-4 max-w-5xl mx-auto space-y-6">
+
+      <div id="grid_container" class="grid md:grid-cols-2 gap-6">
+
+        <!-- Left Column -->
+        <div id="left_column" class="space-y-6">
+
+          <!-- Details Panel -->
+          <section class="panel bg-gray-800 p-4 rounded-lg">
+            <h2 class="text-xl font-semibold mb-2">Details</h2>
+            <div class="row mb-2">
+              <label for="team" class="block mb-1">Team Number</label>
+              <input id="team" type="number" name="team_number" required
+                     class="w-full p-2 rounded text-black"/>
+            </div>
+            <div class="row mb-2">
+              <label for="match" class="block mb-1">Match Number</label>
+              <input id="match" type="number" name="match_number" required
+                     class="w-full p-2 rounded text-black"/>
+            </div>
+            <div class="row mb-2">
+              <label for="tournament" class="block mb-1">Tournament</label>
+              <input id="tournament" type="text" name="tournament_name"
+                     class="w-full p-2 rounded text-black"/>
+            </div>
+          </section>
+
+          <!-- Auto Panel -->
+          <section class="panel bg-gray-800 p-4 rounded-lg space-y-4" id="auto">
+            <h2 class="text-xl font-semibold">Auto</h2>
+
+            <!-- Attempted -->
+            <div class="control-group space-y-1">
+              <div class="header-row flex justify-between items-center">
+                <h3>Attempted</h3>
+                <input id="auto_balls_attempted" class="batch-display w-16 text-center rounded" type="number" value="0" readonly />
+              </div>
+              <div class="button-row flex gap-2">
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="auto_balls_attempted" data-value="0">0</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="auto_balls_attempted" data-value="1">1</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="auto_balls_attempted" data-value="2">2</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="auto_balls_attempted" data-value="3">3</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="auto_balls_attempted" data-value="4">4</button>
+              </div>
+            </div>
+
+            <!-- Made -->
+            <div class="control-group space-y-1">
+              <div class="header-row flex justify-between items-center">
+                <h3>Made</h3>
+                <input id="auto_balls_made" class="batch-display w-16 text-center rounded" type="number" value="0" readonly />
+              </div>
+              <div class="button-row flex gap-2">
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="auto_balls_made" data-value="0">0</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="auto_balls_made" data-value="1">1</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="auto_balls_made" data-value="2">2</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="auto_balls_made" data-value="3">3</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="auto_balls_made" data-value="4">4</button>
+              </div>
+            </div>
+
+            <div class="record-area mt-2">
+              <button type="button" class="record-ball-btn px-4 py-2 bg-blue-600 rounded">Record</button>
+            </div>
+
+            <!-- Zone -->
+            <h3 class="mt-2">Zone</h3>
+            <div class="row flex gap-4">
+              <label class="flex items-center gap-1">
+                <input name="auto_zone" type="radio" value="Near" />
+                Near
+              </label>
+              <label class="flex items-center gap-1">
+                <input name="auto_zone" type="radio" value="Far" />
+                Far
+              </label>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Right Column -->
+        <div id="right_column" class="space-y-6">
+
+          <!-- Teleop Panel -->
+          <section class="panel bg-gray-800 p-4 rounded-lg" id="teleop">
+            <h2 class="text-xl font-semibold">Teleop</h2>
+
+            <!-- Attempted -->
+            <div class="control-group space-y-1">
+              <div class="header-row flex justify-between items-center">
+                <h3>Attempted</h3>
+                <input id="teleop_balls_attempted" class="batch-display w-16 text-center rounded" type="number" value="0" readonly />
+              </div>
+              <div class="button-row flex gap-2">
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="teleop_balls_attempted" data-value="0">0</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="teleop_balls_attempted" data-value="1">1</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="teleop_balls_attempted" data-value="2">2</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="teleop_balls_attempted" data-value="3">3</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="teleop_balls_attempted" data-value="4">4</button>
+              </div>
+            </div>
+
+            <!-- Made -->
+            <div class="control-group space-y-1">
+              <div class="header-row flex justify-between items-center">
+                <h3>Made</h3>
+                <input id="teleop_balls_made" class="batch-display w-16 text-center rounded" type="number" value="0" readonly />
+              </div>
+              <div class="button-row flex gap-2">
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="teleop_balls_made" data-value="0">0</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="teleop_balls_made" data-value="1">1</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="teleop_balls_made" data-value="2">2</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="teleop_balls_made" data-value="3">3</button>
+                <button type="button" class="counter-btn px-3 py-1 bg-gray-700 rounded" data-target="teleop_balls_made" data-value="4">4</button>
+              </div>
+            </div>
+
+            <div class="record-area mt-2">
+              <button type="button" class="record-ball-btn px-4 py-2 bg-blue-600 rounded" data-phase="teleop">Record</button>
+            </div>
+
+            <h3 class="mt-2">Zone</h3>
+            <div class="row flex gap-4">
+              <label class="flex items-center gap-1">
+                <input name="teleop_zone" type="radio" value="Near" /> Near
+              </label>
+              <label class="flex items-center gap-1">
+                <input name="teleop_zone" type="radio" value="Far" /> Far
+              </label>
+            </div>
+          </section>
+
+          <!-- Endgame Panel -->
+          <section class="panel bg-gray-800 p-4 rounded-lg" id="endgame">
+            <h2 class="text-xl font-semibold">Endgame</h2>
+            <div class="row flex gap-4">
+              <label><input type="radio" name="endgame" value="Partial" /> Partial</label>
+              <label><input type="radio" name="endgame" value="Full" /> Full</label>
+              <label><input type="radio" name="endgame" value="Lift" /> Lift</label>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+
+      <div id="submit_area" class="mt-4 text-center">
+        <button type="submit" class="px-4 py-2 bg-green-600 rounded">Submit Match</button>
+      </div>
+
+    </form>
+
+    <!-- JS entry -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
