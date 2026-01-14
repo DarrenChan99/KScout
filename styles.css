@@ -1,9 +1,0 @@
-.layout-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 20px;
-}
-/* on mobile the boxes stack */
-@media (max-width: 768px) {
-    .layout-grid { grid-template-columns: 1fr; }
-}
