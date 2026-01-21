@@ -12,6 +12,12 @@ dist/
 dist-ssr
 *.local
 DS_Store
+postcss.config.js
+tailwind.config.js
+vite.config.js
+package-lock.json
+package.json
+
 
 # Editor directories and files
 .vscode/*

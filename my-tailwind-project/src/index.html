@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>KScout</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
   </head>
 
-  /*
+  <!-- 
   TAILWIND CSS QUICK REF
   ----------------------
   LAYOUT & FLEXBOX
@@ -56,11 +56,11 @@
   active:[class] -> active state
   transition, duration-[ms], ease-[type] -> animations
   cursor-pointer, cursor-wait, cursor-not-allowed -> cursor
-*/
+/-->
 
   <body>
     <header id="main-header">
-      <h1>KScout</h1>
+      <h1 class="flex text-center text-4xl">KScout</h1>
     </header>
 
     <form id="scout_form">
@@ -224,7 +224,6 @@
       </div>
     </form>
 
-    <script src="script.js"></script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

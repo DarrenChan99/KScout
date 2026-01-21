@@ -23,9 +23,14 @@ counterButtons.forEach(btn => {
 
 recordButtons.forEach(btn => {
   btn.addEventListener('click', () => {
+    startTimer()
+
     const phase = btn.dataset.phase
-    const made = parseInt(document.getElementById(`${phase}_balls_made`).value)
-    const attempted = parseInt(document.getElementById(`${phase}_balls_attempted`).value)
+    const madeInput = document.getElementById(`${phase}_balls_made`)
+    const attemptedInput = document.getElementById(`${phase}_balls_attempted`)
+
+    const made = parseInt(madeInput.value)
+    const attempted = parseInt(attemptedInput.value)
 
     if (made === 0 && attempted === 0) return
 
@@ -40,8 +45,13 @@ recordButtons.forEach(btn => {
     })
 
     lastCycleTime = now
+    
+    madeInput.value = 0
+    attemptedInput.value = 0
   })
 })
+
+
 
 form.addEventListener('submit', e => {
   e.preventDefault()
