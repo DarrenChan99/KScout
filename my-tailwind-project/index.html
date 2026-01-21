@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KScout</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="/path/to/tailwind.css" rel="stylesheet">
+  </head>
+
+  <!-- 
+  TAILWIND CSS QUICK REF
+  ----------------------
+  LAYOUT & FLEXBOX
+  flex, inline-flex      -> display
+  flex-row, flex-col     -> direction
+  justify-start, center, between, around, evenly -> main axis
+  items-start, center, end, baseline, stretch    -> cross axis
+  flex-1, flex-auto, flex-none -> grow/shrink
+  gap-x, gap-y, gap-[val]      -> spacing
+
+  GRID
+  grid, inline-grid      -> display
+  grid-cols-[n]          -> columns (e.g., grid-cols-3)
+  col-span-[n]           -> item width
+  grid-rows-[n]          -> rows
+  row-span-[n]           -> item height
+
+  SPACING & SIZING
+  p-[val], px, py, pt, pr, pb, pl -> padding
+  m-[val], mx, my, mt, mr, mb, ml -> margin
+  w-[val], w-full, w-screen, w-min, w-max -> width
+  h-[val], h-full, h-screen -> height
+  size-[val] -> set width and height simultaneously
+
+  TYPOGRAPHY
+  text-[size] -> xs, sm, base, lg, xl, 2xl...
+  font-[weight] -> thin, light, normal, medium, bold, black
+  text-[color]-[shade] -> e.g., text-blue-500
+  text-left, center, right, justify -> alignment
+  leading-[val] -> line height
+  tracking-[val] -> letter spacing
+  uppercase, lowercase, capitalize, normal-case -> transform
+
+  DESIGN & BORDERS
+  bg-[color]-[shade] -> background color
+  rounded, rounded-[size] -> border radius (sm, md, lg, full)
+  border, border-[val], border-[color] -> width and color
+  shadow, shadow-[size] -> box shadow (sm, md, lg, xl)
+  opacity-[val] -> 0, 25, 50, 75, 100
+
+  INTERACTIVITY
+  hover:[class] -> hover state
+  focus:[class] -> focus state
+  active:[class] -> active state
+  transition, duration-[ms], ease-[type] -> animations
+  cursor-pointer, cursor-wait, cursor-not-allowed -> cursor
+/-->
+
+  <body>
+    <header id="main-header">
+      <h1 class="text-center text-4xl" style="color: var(--primary-main);">KScout</h1>
+    </header>
+
+    <form id="scout_form">
+      <div id="grid_container">
+        <div id="left_column">
+          <section class="panel" id="details">
+            <h2>Details</h2>
+            <div class="row">
+              <label for="team">Team Number</label>
+              <input id="team" type="number" name="team_number" required />
+            </div>
+            <div class="row">
+              <label for="match">Match Number</label>
+              <input id="match" type="number" name="match_number" required />
+            </div>
+            <div class="row">
+              <label for="tournament">Tournament</label>
+              <input id="tournament" type="text" name="tournament_name" />
+            </div>
+          </section>
+
+          <section class="panel" id="auto">
+            <h2>Auto</h2>
+
+            <div class="control-group">
+              <div class="header-row">
+                <h3>Attempted</h3>
+                <input
+                  id="auto_balls_attempted"
+                  class="batch-display"
+                  name="auto_balls_attempted"
+                  type="number"
+                  value="0"
+                  readonly
+                />
+              </div>
+              <div class="button-row">
+                <button type="button" class="counter-btn" data-target="auto_balls_attempted" data-value="0">0</button>
+                <button type="button" class="counter-btn" data-target="auto_balls_attempted" data-value="1">1</button>
+                <button type="button" class="counter-btn" data-target="auto_balls_attempted" data-value="2">2</button>
+                <button type="button" class="counter-btn" data-target="auto_balls_attempted" data-value="3">3</button>
+                <button type="button" class="counter-btn" data-target="auto_balls_attempted" data-value="4">4</button>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="header-row">
+                <h3>Made</h3>
+                <input
+                  id="auto_balls_made"
+                  class="batch-display"
+                  name="auto_balls_made"
+                  type="number"
+                  value="0"
+                  readonly
+                />
+              </div>
+              <div class="button-row">
+                <button type="button" class="counter-btn" data-target="auto_balls_made" data-value="0">0</button>
+                <button type="button" class="counter-btn" data-target="auto_balls_made" data-value="1">1</button>
+                <button type="button" class="counter-btn" data-target="auto_balls_made" data-value="2">2</button>
+                <button type="button" class="counter-btn" data-target="auto_balls_made" data-value="3">3</button>
+                <button type="button" class="counter-btn" data-target="auto_balls_made" data-value="4">4</button>
+              </div>
+            </div>
+
+            <div class="record-area">
+              <button type="button" class="record-ball-btn" data-phase="auto">Record</button>
+            </div>
+
+            <h3>Zone</h3>
+            <div class="row">
+              <label>
+                <input name="auto_zone" type="radio" value="Near" />
+                Near
+              </label>
+              <label>
+                <input name="auto_zone" type="radio" value="Far" />
+                Far
+              </label>
+            </div>
+          </section>
+        </div>
+
+        <div id="right_column">
+          <section class="panel" id="teleop">
+            <h2>Teleop</h2>
+
+            <div class="control-group">
+              <div class="header-row">
+                <h3>Attempted</h3>
+                <input
+                  id="teleop_balls_attempted"
+                  class="batch-display"
+                  name="teleop_balls_attempted"
+                  type="number"
+                  value="0"
+                  readonly
+                />
+              </div>
+              <div class="button-row">
+                <button type="button" class="counter-btn" data-target="teleop_balls_attempted" data-value="0">0</button>
+                <button type="button" class="counter-btn" data-target="teleop_balls_attempted" data-value="1">1</button>
+                <button type="button" class="counter-btn" data-target="teleop_balls_attempted" data-value="2">2</button>
+                <button type="button" class="counter-btn" data-target="teleop_balls_attempted" data-value="3">3</button>
+                <button type="button" class="counter-btn" data-target="teleop_balls_attempted" data-value="4">4</button>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="header-row">
+                <h3>Made</h3>
+                <input
+                  id="teleop_balls_made"
+                  class="batch-display"
+                  name="teleop_balls_made"
+                  type="number"
+                  value="0"
+                  readonly
+                />
+              </div>
+              <div class="button-row">
+                <button type="button" class="counter-btn" data-target="teleop_balls_made" data-value="0">0</button>
+                <button type="button" class="counter-btn" data-target="teleop_balls_made" data-value="1">1</button>
+                <button type="button" class="counter-btn" data-target="teleop_balls_made" data-value="2">2</button>
+                <button type="button" class="counter-btn" data-target="teleop_balls_made" data-value="3">3</button>
+                <button type="button" class="counter-btn" data-target="teleop_balls_made" data-value="4">4</button>
+              </div>
+            </div>
+
+            <div class="record-area">
+              <button type="button" class="record-ball-btn" data-phase="teleop">Record</button>
+            </div>
+
+            <h3>Zone</h3>
+            <div class="row">
+              <label>
+                <input name="teleop_zone" type="radio" value="Near" />
+                Near
+              </label>
+              <label>
+                <input name="teleop_zone" type="radio" value="Far" />
+                Far
+              </label>
+            </div>
+          </section>
+
+          <section class="panel" id="endgame">
+            <h2>Endgame</h2>
+            <div class="row">
+              <label><input type="radio" name="endgame" value="Partial" /> Partial</label>
+              <label><input type="radio" name="endgame" value="Full" /> Full</label>
+              <label><input type="radio" name="endgame" value="Lift" /> Lift</label>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div id="submit_area">
+        <button type="submit">Submit Match</button>
+      </div>
+    </form>
+
+    <script src="script.js"></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
