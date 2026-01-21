@@ -45,7 +45,7 @@ recordButtons.forEach(btn => {
     })
 
     lastCycleTime = now
-    
+
     madeInput.value = 0
     attemptedInput.value = 0
   })

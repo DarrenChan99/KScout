@@ -1,3 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide the up/down arrows on number inputs */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/* Remove tap highlight on mobile */
+* { 
+  -webkit-tap-highlight-color: transparent; 
+}
+
 :root {
   /* Accent */
   --primary-main: #8B5CF6;
